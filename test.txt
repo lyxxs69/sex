@@ -1,5 +1,5 @@
 :root {
-  --version: "Frosted Glass 2.0.19";
+  --version: "okman";
   --TB-top: calc(var(--server-container) + var(--window-padding));
   --TB-tr-roundness: var(--window-roundness);
   --TB-position-top: var(--TB-top, var(--window-padding));
