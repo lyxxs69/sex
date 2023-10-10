@@ -1,5 +1,5 @@
 :root {
-  --version: "okman";
+  --version: "Frosted Glass 2.0.19";
   --TB-top: calc(var(--server-container) + var(--window-padding));
   --TB-tr-roundness: var(--window-roundness);
   --TB-position-top: var(--TB-top, var(--window-padding));
@@ -181,7 +181,7 @@ button,
 input,
 select,
 textarea {
-  font-family: var(--font, "Whitney"), "Whitney";
+  font-family: var(--font, "gg sans"), "gg sans";
 }
 
 #app-mount .tooltip-33Jwqe {
