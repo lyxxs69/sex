@@ -181,7 +181,7 @@ button,
 input,
 select,
 textarea {
-  font-family: var(--font, "gg sans"), "gg sans";
+  font-family: var(--font, "Whitney"), "Whitney";
 }
 
 #app-mount .tooltip-33Jwqe {
