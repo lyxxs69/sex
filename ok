@@ -24,7 +24,7 @@
 
 # A color code between 0-9 or a-f. Set to 'none' to disable.
 # In 1.16+ you can use hex color codes here as well. (For example, #613e1d is brown).
-ops-name-color: 'none'
+ops-name-color: '4'
 
 # The character(s) to prefix all nicknames, so that you know they are not true usernames.
 # Users with essentials.nick.hideprefix will not be prefixed with the character(s)
@@ -41,7 +41,7 @@ nick-blacklist:
 
 # When this option is enabled, nickname length checking will exclude color codes in player names.
 # ie: "&6Notch" has 7 characters (2 are part of a color code), a length of 5 is used when this option is set to true
-ignore-colors-in-max-nick-length: true
+ignore-colors-in-max-nick-length: false
 
 # When this option is enabled, display names for hidden users will not be shown. This prevents players from being
 # able to see that they are online while vanished.
@@ -140,14 +140,14 @@ permission-based-item-spawn: false
 spawnmob-limit: 10
 
 # Shall we notify users when using /lightning?
-warn-on-smite: false
+warn-on-smite: true
 
 # Shall we drop items instead of adding to inventory if the target inventory is full?
-drop-items-if-full: true
+drop-items-if-full: false
 
 # Essentials Mail Notification
 # Should we notify players if they have no new mail?
-notify-no-new-mail: false
+notify-no-new-mail: true
 
 # Specifies the duration (in seconds) between each time a player is notified of mail they have.
 # Useful for servers with a lot of mail traffic.
@@ -183,27 +183,27 @@ verbose-command-usages: true
 # remove commands that are used for something you dont want to spy on.
 # Set - '*' in order to listen on all possible commands.
 socialspy-commands:
-  * msg
-  * w
-  * r
-  * mail
-  * m
-  * t
-  * whisper
-  * emsg
-  * tell
-  * er
-  * reply
-  * ereply
-  * email
-  * action
-  * describe
-  * eme
-  * eaction
-  * edescribe
-  * etell
-  * ewhisper
-  * pm
+  - msg
+  - w
+  - r
+  - mail
+  - m
+  - t
+  - whisper
+  - emsg
+  - tell
+  - er
+  - reply
+  - ereply
+  - email
+  - action
+  - describe
+  - eme
+  - eaction
+  - edescribe
+  - etell
+  - ewhisper
+  - pm
 
 # Whether the private and public messages from muted players should appear in the social spy.
 # If so, they will be differentiated from those sent by normal players.
@@ -435,7 +435,7 @@ list:
     #Players: '*'
 
 # Displays real names in /list next to players who are using a nickname.
-real-names-on-list: true
+real-names-on-list: false
 
 # More output to the console.
 debug: false
@@ -589,7 +589,7 @@ oversized-stacksize: 64
 # Allow repair of enchanted weapons and armor.
 # If you set this to false, you can still allow it for certain players using the permission.
 # essentials.repair.enchanted
-repair-enchanted: false
+repair-enchanted: true
 
 # Allow 'unsafe' enchantments in kits and item spawning.
 # Warning: Mixing and overleveling some enchantments can cause issues with clients, servers and plugins.
@@ -606,21 +606,21 @@ register-back-in-listener: false
 login-attack-delay: 5
 
 #Set the max fly speed, values range from 0.1 to 1.0
-max-fly-speed: 1.0
+max-fly-speed: 0.8
 
 #Set the max walk speed, values range from 0.1 to 1.0
-max-walk-speed: 1.0
+max-walk-speed: 0.8
 
 #Set the maximum amount of mail that can be sent within a minute.
 mails-per-minute: 1000
 
 # Set the maximum time /mute can be used for in seconds.
 # Set to -1 to disable, and essentials.mute.unlimited can be used to override.
-max-mute-time: 5
+max-mute-time: -1
 
 # Set the maximum time /tempban can be used for in seconds.
 # Set to -1 to disable, and essentials.tempban.unlimited can be used to override.
-max-tempban-time: 5
+max-tempban-time: -1
 
 # Changes the default /reply functionality. This can be changed on a per-player basis using /rtoggle.
 # If true, /r goes to the person you messaged last, otherwise the first person that messaged you.
@@ -660,7 +660,7 @@ world-time-permissions: false
 # For example, to target commands starting with ban and not banip the following would be used:
 #  '^ban([^ip])( .*)?': 60 # 60 seconds /ban cooldown.
 # Note: If you have a command that starts with ^, then you can escape it using backslash (\). e.g. \^command: 123
-command-cooldowns: 1
+command-cooldowns:
 #  feed: 100 # 100 second cooldown on /feed command
 #  '*': 5 # 5 Second cooldown on all commands
 
@@ -687,8 +687,8 @@ delay-motd: 0
 # A list of commands that should have their complementary confirm commands enabled by default.
 # This is empty by default, for the latest list of valid commands see the latest source config.yml.
 default-enabled-confirm-commands:
-- clear
-- clearinventory
+#- pay
+#- clearinventory
 
 # Where should Essentials teleport players when they are freed from jail?
 # You can set to "back" to have them teleported to where they were before they were jailed, "spawn" to have them
@@ -907,7 +907,7 @@ chat:
   # {TEAMPREFIX} - The sender's scoreboard team prefix.
   # {TEAMSUFFIX} - The sender's scoreboard team suffix.
 
-  format: '{PREFIX} {NICKNAME} {MESSAGE}'
+  format: '<{DISPLAYNAME}> {MESSAGE}'
   #format: '&7[{GROUP}]&r {DISPLAYNAME}&7:&r {MESSAGE}'
   #format: '&7{PREFIX}&r {DISPLAYNAME}&r &7{SUFFIX}&r: {MESSAGE}'
 
@@ -1180,7 +1180,7 @@ respawn-at-home-bed: true
 respawn-at-anchor: false
 
 # Teleport all joining players to the spawnpoint
-spawn-on-join: true
+spawn-on-join: false
 # The following value of `guests` states that all players in group `guests` will be teleported to spawn when joining.
 #spawn-on-join: guests
 # The following list value states that all players in group `guests` and `admin` are to be teleported to spawn when joining. 
